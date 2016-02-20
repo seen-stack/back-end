@@ -3,11 +3,12 @@
     "enabled": false,
     "cores": "auto"
   },
+  "storage": "memory",
   "servers": {
     "http": {
       "enabled": true,
       "port": 3333,
-      "methods": ["get", "put", "post", "delete"],
+      "methods": ["get", "put", "post", "delete", "patch"],
       "webSockets": false,
       "cluster": false
     },

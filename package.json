@@ -23,8 +23,8 @@
     }
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha ./tests/test",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/test",
+    "test": "node_modules/.bin/mocha ./tests/",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "app": "node_modules/grunt-cli/bin/grunt",
     "start": "node_modules/pm2/bin/pm2 startup && node_modules/pm2/bin/pm2 start app.js",
@@ -36,8 +36,8 @@
     "stop-all": "node_modules/pm2/bin/pm2 stop all"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
     "chai": "^3.4.0",
+    "coveralls": "^2.11.4",
     "debug": "^2.2.0",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
@@ -49,6 +49,7 @@
     "istanbul": "^0.4.1",
     "mocha": "^2.3.3",
     "mocha-sinon": "^1.1.4",
+    "request": "^2.69.0",
     "sinon": "^1.17.2",
     "touch": "^1.0.0"
   },
