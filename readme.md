@@ -7,6 +7,10 @@
 git clone git@github.com:seen-stack/back-end.git
 npm install
 ```
+# Few notes: 
+  * The default storage is MongoDB, but if you don't have mongo installed,
+you can switch it to "memory" from [here](https://github.com/seen-stack/back-end/blob/master/app/config/config.json#L6)
+  * Most of the classes are without a state. That's way they all have only static methods, removing the overhead of using the "new" keyword
 
 ## Compatibility
 

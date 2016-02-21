@@ -8,6 +8,7 @@ describe('Route "client-errors"', () => {
 
   it('Should write client error to file', done => {
 
+    // to be sure that this is an unique message
     let d = new Date();
     let name = d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear();
     let errorMessage = d.toString() + ' Something just when wrong';

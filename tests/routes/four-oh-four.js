@@ -2,9 +2,9 @@
 const expect = require('chai').expect;
 const request = require('request');
 
-describe('Route "four-oh-four', () => {
+describe('Route "four-oh-four"', () => {
 
-  it('Should return status "404" for /uknown-route', done => {
+  it('Should return a status "404" for /uknown-route', done => {
 
     let url = 'http://localhost:3333/uknown-route';
 
@@ -17,7 +17,7 @@ describe('Route "four-oh-four', () => {
 
   });
 
-  it('Should return status "204" for "OPTIONS" request', done => {
+  it('Should return a status "204" for "OPTIONS" request', done => {
 
     let options = {
       method: 'OPTIONS',

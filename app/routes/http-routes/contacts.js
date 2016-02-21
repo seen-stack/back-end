@@ -36,7 +36,7 @@ class Contacts {
   static getMultipleRecords(req, res) {
     ContactsController.all()
     .then(contacts => {
-      res.json(contacts);
+      res.end(JSON.stringify(contacts));
     })
     .catch(error => {
       Contacts.onError(error, res, 'getMultipleRecords');
@@ -55,7 +55,7 @@ class Contacts {
     ContactsController.update(req.record, req.body)
     .then(contacts => {
       res.statusCode = 204;
-      res.json(contacts);
+      res.end(JSON.stringify(contacts));
     })
     .catch(error => {
       Contacts.onError(error, res, 'putSingleRecord');
@@ -74,7 +74,7 @@ class Contacts {
     ContactsController.create(req.body)
     .then(contacts => {
       res.statusCode = 201;
-      res.json(contacts);
+      res.end(JSON.stringify(contacts));
     })
     .catch(error => {
       Contacts.onError(error, res, 'postSingleRecord');
@@ -93,7 +93,7 @@ class Contacts {
     ContactsController.delete(req.record)
     .then(contacts => {
       res.statusCode = 204;
-      res.json(contacts);
+      res.end(JSON.stringify(contacts));
     })
     .catch(error => {
       Contacts.onError(error, res, 'deleteSingleRecord');

@@ -5,7 +5,7 @@ const names = require('country-list')().getNames();
 
 describe('Route "countries"', () => {
 
-  it('Should get list of all countries', done => {
+  it('Should get a list of all countries', done => {
 
     let url = 'http://localhost:3333/countries';
 
