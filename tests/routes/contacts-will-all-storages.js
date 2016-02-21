@@ -147,7 +147,7 @@ function makeContactsRequests(storage, next) {
 
 }
 
-makeContactsRequests('Memory', () => {
+makeContactsRequests('MongoDB', () => {
   Storage.changeStorage(Memory);
   makeContactsRequests('Memory');
 });

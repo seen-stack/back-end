@@ -1,9 +1,25 @@
+/**
+ * @author Ivaylo Ivanov
+ * @public
+ * @class Contacts
+ * @description Serializes and validates the request from the route to the
+ * model and returns back the result to the route
+ * @requires jsonapi-serializer
+ * @requires ../models/contacts
+ */
 'use strict';
 const JSONAPISerializer = require('jsonapi-serializer');
 const Model = require('../models/contacts');
 
 class Contacts {
 
+
+  /**
+  * @public
+  * @static
+  * @description Gets all records for this model, serializes and returns them
+  * @returns {object} promise
+  */
   static all() {
     return new Promise(resolve => {
       return resolve(new Model().getAll());
@@ -16,6 +32,13 @@ class Contacts {
     });
   }
 
+  /**
+  * @public
+  * @static
+  * @description Creates new record for this model
+  * @param {object} record
+  * @returns {object} promise
+  */
   static create(contact) {
     return new Promise((resolve, reject) => {
       if (!contact || !contact.data || !contact.data.attributes) {
@@ -33,6 +56,14 @@ class Contacts {
     });
   }
 
+  /**
+  * @public
+  * @static
+  * @description Updates the record
+  * @param {int|string} id or guid
+  * @param {object} record
+  * @returns {object} promise
+  */
   static update(id, contact) {
     return new Promise((resolve, reject) => {
       if (!contact || !contact.data || !contact.data.attributes) {
@@ -47,11 +78,17 @@ class Contacts {
       reject(errors);
     })
     .then(() => {
-      let id = contact.data.id;
       return new JSONAPISerializer('contacts', {id: id}, {attributes: []});
     });
   }
 
+  /**
+  * @public
+  * @static
+  * @description Deletes the record
+  * @param {int|string} id or guid
+  * @returns {object} promise
+  */
   static delete(id) {
     return new Promise(resolve => {
       return resolve(new Model().delete(id));
