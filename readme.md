@@ -24,3 +24,6 @@ npm install
 | >= 3.3.6 |
 
 For more information about the structure and "how to", please refer to [Esrol Wiki](https://github.com/esrol/esrol-server-app/wiki)
+
+## Status
+Work in progress

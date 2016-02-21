@@ -147,9 +147,7 @@ function makeContactsRequests(storage, next) {
 
 }
 
-Storage.changeStorage(Memory);
 makeContactsRequests('Memory', () => {
-  Mongo.createClient(true);
-  Storage.changeStorage(Mongo);
-  makeContactsRequests('MongoDB');
+  Storage.changeStorage(Memory);
+  makeContactsRequests('Memory');
 });
